@@ -28,12 +28,17 @@
       imagemagick
       dig
       obs-studio
+      godot
+      blender
+      rustup
+      gcc
     ];
 
     programs.bash = {
       enable = true;
       initExtra = ''
         eval "$(starship init bash)"
+        eval "$(devenv hook bash)"
       '';
     };
 
