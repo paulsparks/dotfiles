@@ -32,7 +32,13 @@
       blender
       rustup
       gcc
+      inkscape
+      nerd-fonts.jetbrains-mono
+      cryptomator
+      rclone
     ];
+
+    fonts.fontconfig.enable = true;
 
     programs.bash = {
       enable = true;
