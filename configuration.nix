@@ -53,6 +53,7 @@
       alsa.support32Bit = true;
       pulse.enable = true;
     };
+    udev.extraRules = builtins.readFile ./esp32/69-probe-rs.rules;
   };
 
   security = {
@@ -65,13 +66,16 @@
 
   virtualisation.docker.enable = true;
 
-  users.users."psparks" = {
+  users.groups.plugdev = { };
+
+  users.users.psparks = {
     isNormalUser = true;
     description = "psparks";
     extraGroups = [
       "networkmanager"
       "wheel"
       "docker"
+      "plugdev"
     ];
   };
 
